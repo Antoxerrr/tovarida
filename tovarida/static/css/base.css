@@ -1,0 +1,30 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: var(--tvrd-bg);
+
+}
+
+:root {
+    --tvrd-primary: #8AB9B5;
+    --tvrd-secondary: #5B5B5B;
+    --tvrd-danger: #D66853;
+    --tvrd-warning: #ECA400;
+    --tvrd-success: #C5D86D;
+    --tvrd-bg: #f3f0f1;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.tvrd-btn-primary {
+    background: var(--tvrd-primary);
+}
