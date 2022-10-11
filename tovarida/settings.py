@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 SOURCES_DIR = Path(__file__).resolve().parent
+PROJECT_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'sosecret')
 
@@ -101,7 +102,8 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [SOURCES_DIR / 'staticfiles']
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticfiles')
+STATICFILES_DIRS = [SOURCES_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
