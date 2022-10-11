@@ -2,63 +2,105 @@
 {% load static %}
 
 {% block meta %}
+<link href="{% static 'boxicons/css/boxicons.min.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'css/layout.css' %}" rel="stylesheet" type="text/css">
-<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
-<link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
-<link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'js/box-icon-toggle-controller.js' %}"></script>
+<script src="{% static 'js/header.js' %}"></script>
 {% endblock %}
 
 {% block body %}
-<div class="header-wrapper">
-    <nav class="main-header">
-        <div class="row row-cols-4 justify-content-center align-items-center">
-            <div class="col col-2 d-flex justify-content-center align-items-center">
-                <div class="header-brand">
-                    <h3 class="mb-0"><i class="fa-brands fa-shopify"></i> <i>Tovarida</i></h3>
-                </div>
+<header class="header">
+    <div class="container header-container">
+        <div class="logo-section">
+            <h2><i>Tovarida</i></h2>
+        </div>
+        <div class="catalog-section">
+            <div class="tova-btn tova-btn-primary tova-icon-btn">
+                <i class='bx bx-menu btn-icon'></i>
+                Каталог
             </div>
-            <div class="col col-2 d-flex justify-content-center align-items-center">
-                <div class="header-catalog">
-                    <button class="btn tvrd-btn-primary">
-                        <i class="fa-solid fa-bars"></i>
-                        <span>Каталог</span>
+        </div>
+        <div class="search-section">
+            <form>
+                <div class="input-wrap">
+                    <input type="text" name="query" placeholder="Искать на Tovarida">
+                    <button type="submit">
+                        <i class='bx bx-search-alt'></i>
                     </button>
                 </div>
-            </div>
-            <div class="col col-4 d-flex justify-content-center align-items-center">
-                <div class="header-search w-100">
-                    <div class="search-form-wrapper w-100">
-                        <form class="w-100">
-                            <div class="search-bar-container w-100 d-flex flex-row">
-                                <input class="search-input" type="text" placeholder="Искать на Tovarida">
-                                <button type="submit" class="btn tvrd-btn-primary search-btn">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+            </form>
+        </div>
+        <div class="menu-section">
+            <div class="menu-section__item">
+                <div class="menu-section__item-icon">
+                    <i class='bx bx-bookmark-heart'></i>
+                </div>
+                <div class="menu-section__item-text">
+                    Избранное
                 </div>
             </div>
-            <div class="col col-4 d-flex justify-content-center align-items-center">
-                <div class="header-menu">
-                    <div class="d-flex flex-row justify-content-around">
-                        <div class="header-menu-item">
-                            <i class="fa-solid fa-heart header-menu-icon"></i>
-                            <span>Избранное</span>
-                        </div>
-                        <div class="header-menu-item">
-                            <i class="fa-solid fa-cart-shopping header-menu-icon"></i>
-                            <span>Корзина</span>
-                        </div>
-                        <div class="header-menu-item">
-                            <i class="fa-solid fa-user header-menu-icon"></i>
-                            <span>Войти</span>
-                        </div>
-                    </div>
+            <div class="menu-section__item">
+                <div class="menu-section__item-icon">
+                    <i class='bx bx-cart-alt'></i>
+                </div>
+                <div class="menu-section__item-text">
+                    Корзина
+                </div>
+            </div>
+            <div class="menu-section__item">
+                <div class="menu-section__item-icon">
+                    <i class='bx bx-user-circle'></i>
+                </div>
+                <div class="menu-section__item-text">
+                    Войти
                 </div>
             </div>
         </div>
-    </nav>
-</div>
+    </div>
+    <div class="header-container-mobile">
+        <div class="offset-section-mobile"></div>
+        <div class="middle-section-mobile">
+            <div class="search-section-mobile" id="mobile-search-bar" style="display: none">
+                <form>
+                    <input type="text" name="query" placeholder="Искать на Tovarida">
+                </form>
+            </div>
+            <div class="logo-section-mobile" id="mobile-logo">
+                <h2>Tovarida</h2>
+            </div>
+        </div>
+        <div class="search-toggle-section-mobile" id="mobile-search-toggle">
+            <i class="bx bx-search-alt"></i>
+        </div>
+    </div>
+</header>
 {% block content %}{% endblock %}
+<footer>
+    <div class="mobile-footer-menu">
+        <div class="menu-section__item">
+            <div class="menu-section__item-icon">
+                <i class='bx bx-bookmark-heart'></i>
+            </div>
+            <div class="menu-section__item-text">
+                Избранное
+            </div>
+        </div>
+        <div class="menu-section__item">
+            <div class="menu-section__item-icon">
+                <i class='bx bx-cart-alt'></i>
+            </div>
+            <div class="menu-section__item-text">
+                Корзина
+            </div>
+        </div>
+        <div class="menu-section__item">
+            <div class="menu-section__item-icon">
+                <i class='bx bx-user-circle'></i>
+            </div>
+            <div class="menu-section__item-text">
+                Войти
+            </div>
+        </div>
+    </div>
+</footer>
 {% endblock %}

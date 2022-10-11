@@ -1,52 +1,187 @@
-.header-wrapper {
-    padding: 25px 0;
-}
-
-.header-catalog .btn {
-    font-weight: 500 !important;
-}
-
-.header-menu {
-    width: 100%;
-}
-
-.search-input {
-    flex: 10;
-    border: 4px solid var(--tvrd-primary);
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
-    padding: 6px 12px;
-}
-
-.search-btn {
-    flex: 1;
-    border-radius: 0 8px 8px 0;
-}
-
-.header-menu-item {
+.header-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+}
+
+.logo-section h2 {
+    margin-bottom: 0;
+}
+
+.catalog-section {
+    display: inline-flex;
+    flex: 2;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.header-menu-icon {
-    font-size: 15pt;
-}
-
-/* TODO: вынести */
-
-.products-container {
+.search-section {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 6;
+}
+
+.search-section form {
+    width: 100%;
+}
+
+.menu-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 3;
+    gap: 5px;
+}
+
+.menu-section__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-section__item-icon {
+    font-size: 24px;
+    display: inline-flex;
+}
+
+.input-wrap input {
+    background-color: var(--tova-bg);
+    border: 3px solid var(--tova-primary);
+    border-right: none;
+    border-bottom-left-radius: var(--tova-border-radius);
+    border-top-left-radius: var(--tova-border-radius);
+    height: 100%;
+    padding: 0 26px 0 8px;
+    width: 100%;
+    display: block;
+}
+
+.input-wrap button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--tova-primary);
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-bottom-right-radius: var(--tova-border-radius);
+    border-top-right-radius: var(--tova-border-radius);
+    height: 100%;
+    width: 78px;
+    float: right;
+    transition: background-color 200ms ease-in-out;
+}
+
+.input-wrap button:hover {
+    background-color: var(--tova-primary-hover);
+}
+
+.input-wrap {
+    display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 95%;
+    overflow: hidden;
 }
 
-.products-container > .card {
-    width: 18%;
-    gap: 2%;
-    margin-bottom: 10px;
+.header-container-mobile {
+    display: none;
 }
 
-/* TODO: вынести */
+.logo-section-mobile {
+    color: var(--tova-primary);
+    width: 100%;
+    text-align: center;
+}
+
+.logo-section-mobile h2 {
+    margin-bottom: 0;
+    font-size: 36px;
+}
+
+.offset-section-mobile {
+    flex: 1;
+}
+
+.search-toggle-section-mobile {
+    flex: 1;
+    font-size: 28px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-section-mobile {
+    width: 100%;
+    overflow: hidden;
+}
+
+.search-section-mobile input {
+    width: 100%;
+    border: 3px solid var(--tova-primary);
+    border-radius: var(--tova-border-radius);
+    padding: 5px 15px;
+}
+
+.middle-section-mobile {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.mobile-footer-menu {
+    display: none;
+}
+
+@media (max-width:992px) {
+    .header-container-mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+
+    .header-container {
+        display: none;
+    }
+
+    .header {
+        box-shadow: 0 1px 4px rgba(0,0,0,.16);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 70px;
+    }
+
+    .mobile-footer-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 0 -2px 8px rgba(0,0,0,.15);
+        padding: 7px 0;
+        margin-bottom: -3px;
+    }
+}

@@ -1,17 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
     padding: 0;
     margin: 0;
-    background: var(--tvrd-bg);
-
+    background: var(--tova-bg);
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #181b1e;
 }
 
 :root {
-    --tvrd-primary: #8AB9B5;
-    --tvrd-secondary: #5B5B5B;
-    --tvrd-danger: #D66853;
-    --tvrd-warning: #ECA400;
-    --tvrd-success: #C5D86D;
-    --tvrd-bg: #f3f0f1;
+    --tova-primary: #0C6BFF;
+    --tova-primary-hover: #004ef6;
+    --tova-secondary: #5B5B5B;
+    --tova-danger: #D66853;
+    --tova-warning: #ECA400;
+    --tova-success: #C5D86D;
+    --tova-bg: #f6f5f5;
+    --tova-border-radius: 5px;
 }
 
 input:focus,
@@ -21,10 +27,34 @@ button:focus {
     outline: none;
 }
 
-.btn:focus {
-    box-shadow: none;
+.tova-btn {
+    font-size: 18px;
+    font-weight: 500;
+    transition: background-color 200ms ease-in-out;
+    color: var(--tova-bg);
+    padding: 7px 12px;
+    cursor: pointer;
+    border-radius: var(--tova-border-radius);
 }
 
-.tvrd-btn-primary {
-    background: var(--tvrd-primary);
+.tova-icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.tova-icon-btn .btn-icon {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    font-size: 24px;
+}
+
+.tova-btn-primary {
+    background-color: var(--tova-primary);
+}
+
+.tova-btn-primary:hover {
+    background-color: var(--tova-primary-hover);
 }
